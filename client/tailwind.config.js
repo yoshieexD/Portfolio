@@ -9,6 +9,8 @@ module.exports = {
         'Roboto': ['Roboto', 'sans-serif'],
       },
       screens: {
+        'xxs': '360px',
+        // => @media (min-width:360px) { ... }
         'xs': '480px',
         // => @media (min-width:480px)
         'sm': '640px',
