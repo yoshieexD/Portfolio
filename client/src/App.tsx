@@ -9,7 +9,8 @@ import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { HeaderText } from "./layout/Font";
 import { Helmet } from "react-helmet-async";
 import { Html, Css, Js, Ts, Php, Sql, TailWind, Bootstrap, Antd, ReactJs, ExpressJs, MongoDb, Npm, Postman, Git, Figma, Vercel, ReactQuery, Flutter, Flask, Python } from './asset/DevIcon';
-
+import { Capstone } from "./asset/Work";
+import { WorkContainer } from "./work/WorkContainer";
 
 export default function App() {
   const { darkMode } = useDarkMode();
@@ -92,7 +93,16 @@ export default function App() {
           <div>
             <HeaderText>My Works</HeaderText>
           </div>
-
+          <div className=" flex md:flex-row justify-center md:space-x-4 md:space-y-0 xs:flex-col xs:items-center xs:space-y-4 xxs:space-y-4">
+            {/* <WorkContainer
+              image={<Capstone />}
+              title={'Capstone with Google Drive API Integration'}
+              content={'asdasdasd'} />
+            <WorkContainer
+              image={<Capstone />}
+              title={'Real Time Web Application'}
+              content={''} /> */}
+          </div>
           {/*Certificate */}
 
           <div>

@@ -1,4 +1,4 @@
-import me from '../asset/me.jpg';
+import me from './img/me.jpg';
 
 export const LinkedInIcon = () => {
     return (
