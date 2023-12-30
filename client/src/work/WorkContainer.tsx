@@ -8,7 +8,7 @@ interface WorkContainerProps {
 export const WorkContainer: FC<WorkContainerProps> = ({ image, content, title }) => {
     const { darkMode } = useDarkMode();
     return (
-        <div className={` ${darkMode === true ? 'bg-slate-800 ' : 'bg-gray-100'}  p-6 rounded-lg md:w-1/4 xs:w-4/5 xxs:w-4/5`}>
+        <div className={` ${darkMode === true ? 'bg-slate-800 ' : 'bg-gray-100'}  p-6 rounded-lg w-5/6 h-[200px]`}>
             <div className='w-full'>
                 {image}
             </div>

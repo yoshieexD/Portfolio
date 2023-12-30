@@ -12,8 +12,39 @@ import { Html, Css, Js, Ts, Php, Sql, TailWind, Bootstrap, Antd, ReactJs, Expres
 import { Capstone } from "./asset/Work";
 import { WorkContainer } from "./work/WorkContainer";
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+
 export default function App() {
   const { darkMode } = useDarkMode();
+  const settings = {
+    dots: true,
+    arrows: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    responsive: [
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1
+        }
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+    ],
+  };
+
 
   return (
     <Layout >
@@ -55,21 +86,21 @@ export default function App() {
             <IconButton tooltip="Typescript"><Ts /></IconButton>
             <IconButton tooltip="Python"><Python /></IconButton>
             <IconButton tooltip="Php"> <Php /> </IconButton>
-            <IconButton tooltip="My Sql"> < Sql /> </IconButton>
+            <IconButton tooltip="Flask"><  Flask /></IconButton>
+            <IconButton tooltip="Flutter"><  Flutter /></IconButton>
             <IconButton tooltip="Tailwind">< TailWind /></IconButton>
             <IconButton tooltip="Boostrap">< Bootstrap /></IconButton>
             <IconButton tooltip="Antd"><  Antd /></IconButton>
             <IconButton tooltip="React Js">< ReactJs /></IconButton>
             <IconButton tooltip="React Query">< ReactQuery /></IconButton>
             <IconButton tooltip="Express Js">< ExpressJs /></IconButton>
+            <IconButton tooltip="My Sql"> < Sql /> </IconButton>
             <IconButton tooltip="MongoDB"><  MongoDb /></IconButton>
             <IconButton tooltip="Npm"><  Npm /></IconButton>
             <IconButton tooltip="Postman"><  Postman /></IconButton>
             <IconButton tooltip="Git"><  Git /></IconButton>
             <IconButton tooltip="Figma"><  Figma /></IconButton>
             <IconButton tooltip="Vercel"><  Vercel /></IconButton>
-            <IconButton tooltip="Flutter"><  Flutter /></IconButton>
-            <IconButton tooltip="Flask"><  Flask /></IconButton>
           </div>
           <br />
           {/* Experience*/}
@@ -81,27 +112,61 @@ export default function App() {
               <p className={`text-lg ${darkMode === false ? 'text-black' : 'text-white'} font-bold`}>Full Stack Developer Intern</p>
               <div className="mt-2">
                 <p className={`text-base ${darkMode === false ? 'text-gray-600' : 'text-gray-400'} font-bold italic underline`}>488 hours completed</p>
-                <p className="italic">Gain experience in XML-RPC, REST API, Odoo, Flutter, state management, Agile Scrum, and software documentation.</p>
-                <p className="border-0 cursor-pointer b-slate-800 hover:underline underline-offset-8	" onClick={() => window.open("https://drive.google.com/file/d/1Qx8oThWMyFMX73xHN7NylQkEdt12ztX8/view?usp=sharing", "_blank")} >View Certificate <FaArrowUpRightFromSquare className="w-[10px]" /></p>
+                <p className={`italic ${darkMode === false ? 'text-gray-600' : 'text-gray-400'}`}>Gain experience in XML-RPC, REST API, Odoo, Flutter, state management, Agile Scrum, and software documentation.</p>
+                <p className={`border-0 cursor-pointer b-slate-800 hover:underline underline-offset-8 ${darkMode === false ? 'text-gray-600' : 'text-gray-400'}`} onClick={() => window.open("https://drive.google.com/file/d/1Qx8oThWMyFMX73xHN7NylQkEdt12ztX8/view?usp=sharing", "_blank")} >View Certificate <FaArrowUpRightFromSquare className="w-[10px]" /></p>
 
               </div>
             </div>
           </div>
 
-
           {/* Work*/}
           <div>
             <HeaderText>My Works</HeaderText>
           </div>
-          <div className=" flex md:flex-row justify-center md:space-x-4 md:space-y-0 xs:flex-col xs:items-center xs:space-y-4 xxs:space-y-4">
-            {/* <WorkContainer
-              image={<Capstone />}
-              title={'Capstone with Google Drive API Integration'}
-              content={'asdasdasd'} />
-            <WorkContainer
-              image={<Capstone />}
-              title={'Real Time Web Application'}
-              content={''} /> */}
+          <div className="w-full  flex justify-center">
+            <div className="w-5/6">
+              <Slider {...settings} className="text-center ">
+                <div>
+                  <WorkContainer
+                    image={<Capstone />}
+                    title={'Capstone with Google Drive API Integration'}
+                    content={'asdasdasd'} />
+                </div>
+                <div>
+                  <WorkContainer
+                    image={<Capstone />}
+                    title={'Capstone with Google Drive API Integration'}
+                    content={'asdasdasd'} />
+                </div>
+                <div>
+                  <WorkContainer
+                    image={<Capstone />}
+                    title={'Capstone with Google Drive API Integration'}
+                    content={'asdasdasd'} />
+                </div>
+
+                <div>
+                  <WorkContainer
+                    image={<Capstone />}
+                    title={'Capstone with Google Drive API Integration'}
+                    content={'asdasdasd'} />
+                </div>
+                <div>
+                  <WorkContainer
+                    image={<Capstone />}
+                    title={'Capstone with Google Drive API Integration'}
+                    content={'asdasdasd'} />
+                </div>
+                <div>
+                  <WorkContainer
+                    image={<Capstone />}
+                    title={'Capstone with Google Drive API Integration'}
+                    content={'asdasdasd'} />
+                </div>
+
+
+              </Slider>
+            </div>
           </div>
           {/*Certificate */}
 
