@@ -124,7 +124,7 @@ export default function App() {
             <HeaderText>My Works</HeaderText>
           </div>
           <div className="w-full  flex justify-center">
-            <div className="w-5/6">
+            <div className="md:w-5/6 xs:w-full xxs:w-full">
               <div className="w-full">
                 <Slider {...settings} className="text-center  ">
                   <div>
@@ -132,7 +132,8 @@ export default function App() {
                       image={<Capstone />}
                       title={'Well-Record with Google Drive API Integration'}
                       status={'Private'}
-                      capstone={"Capstone"} />
+                      capstone={"Capstone"}
+                      development="Full Stack" />
                   </div>
                   <div>
                     <WorkContainer
@@ -141,7 +142,8 @@ export default function App() {
                       status={'Public'}
                       capstone={'Personal Project'}
                       website="https://studyflow-hub.vercel.app/"
-                      github="https://github.com/yoshieexD/Student-Productivity" />
+                      github="https://github.com/yoshieexD/Student-Productivity"
+                      development="Full Stack" />
                   </div>
                   <div>
                     <WorkContainer
@@ -150,7 +152,8 @@ export default function App() {
                       status={'Public'}
                       capstone={'Personal Project'}
                       website="https://apirickandmorty-blue.vercel.app/"
-                      github="https://github.com/yoshieexD/apirickandmorty" />
+                      github="https://github.com/yoshieexD/apirickandmorty"
+                      development="Front End" />
                   </div>
                   <div>
                     <WorkContainer
@@ -158,7 +161,8 @@ export default function App() {
                       title={'Book Buddy Library Management Basic Crud'}
                       status={'Public'}
                       capstone={'Personal Project'}
-                      github="https://github.com/yoshieexD/BookBuddyLibraryManagementSystem" />
+                      github="https://github.com/yoshieexD/BookBuddyLibraryManagementSystem"
+                      development="Full Stack" />
                   </div>
                   <div>
                     <WorkContainer
@@ -171,26 +175,29 @@ export default function App() {
                   <div>
                     <WorkContainer
                       image={<Capstone />}
-                      title={'Flutter Dice Game'}
+                      title={'Flutter Dice Game Mobile Application'}
                       status={'Public'}
                       capstone={'Personal Project'}
-                      github="https://github.com/yoshieexD/Flutter_Dice" />
+                      github="https://github.com/yoshieexD/Flutter_Dice"
+                      development="Front End" />
                   </div>
                   <div>
                     <WorkContainer
                       image={<Capstone />}
-                      title={'Flutter Quiz App'}
+                      title={'Flutter Quiz Mobile Application'}
                       status={'Public'}
                       capstone={'Personal Project'}
-                      github="https://github.com/yoshieexD/Flutter_QuizApp" />
+                      github="https://github.com/yoshieexD/Flutter_QuizApp"
+                      development="Front End" />
                   </div>
                   <div>
                     <WorkContainer
                       image={<Capstone />}
-                      title={'Flutter Expenses Tracker'}
+                      title={'Flutter Expenses Tracker Mobile Application'}
                       status={'Public'}
                       capstone={'Personal Project'}
-                      github="https://github.com/yoshieexD/Flutter_ExpenseTracker" />
+                      github="https://github.com/yoshieexD/Flutter_ExpenseTracker"
+                      development="Front End" />
                   </div>
                 </Slider>
               </div>
