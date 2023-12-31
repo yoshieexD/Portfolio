@@ -23,8 +23,8 @@ export default function App() {
     arrows: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToShow: 2,
+    slidesToScroll: 2,
     responsive: [
       {
         breakpoint: 600,
@@ -86,8 +86,8 @@ export default function App() {
             <IconButton tooltip="Typescript"><Ts /></IconButton>
             <IconButton tooltip="Python"><Python /></IconButton>
             <IconButton tooltip="Php"> <Php /> </IconButton>
-            <IconButton tooltip="Flask"><  Flask /></IconButton>
             <IconButton tooltip="Flutter"><  Flutter /></IconButton>
+            <IconButton tooltip="Flask"><  Flask /></IconButton>
             <IconButton tooltip="Tailwind">< TailWind /></IconButton>
             <IconButton tooltip="Boostrap">< Bootstrap /></IconButton>
             <IconButton tooltip="Antd"><  Antd /></IconButton>
@@ -112,7 +112,7 @@ export default function App() {
               <p className={`text-lg ${darkMode === false ? 'text-black' : 'text-white'} font-bold`}>Full Stack Developer Intern</p>
               <div className="mt-2">
                 <p className={`text-base ${darkMode === false ? 'text-gray-600' : 'text-gray-400'} font-bold italic underline`}>488 hours completed</p>
-                <p className={`italic ${darkMode === false ? 'text-gray-600' : 'text-gray-400'}`}>Gain experience in XML-RPC, REST API, Odoo, Flutter, state management, Agile Scrum, and software documentation.</p>
+                <p className={`italic ${darkMode === false ? 'text-gray-600' : 'text-gray-400'}`}>Gain experience in XML-RPC, REST API, Odoo, Flutter, Flask,State Management, Agile Scrum, and Software Documentation.</p>
                 <p className={`border-0 cursor-pointer b-slate-800 hover:underline underline-offset-8 ${darkMode === false ? 'text-gray-600' : 'text-gray-400'}`} onClick={() => window.open("https://drive.google.com/file/d/1Qx8oThWMyFMX73xHN7NylQkEdt12ztX8/view?usp=sharing", "_blank")} >View Certificate <FaArrowUpRightFromSquare className="w-[10px]" /></p>
 
               </div>
@@ -125,47 +125,75 @@ export default function App() {
           </div>
           <div className="w-full  flex justify-center">
             <div className="w-5/6">
-              <Slider {...settings} className="text-center ">
-                <div>
-                  <WorkContainer
-                    image={<Capstone />}
-                    title={'Capstone with Google Drive API Integration'}
-                    content={'asdasdasd'} />
-                </div>
-                <div>
-                  <WorkContainer
-                    image={<Capstone />}
-                    title={'Capstone with Google Drive API Integration'}
-                    content={'asdasdasd'} />
-                </div>
-                <div>
-                  <WorkContainer
-                    image={<Capstone />}
-                    title={'Capstone with Google Drive API Integration'}
-                    content={'asdasdasd'} />
-                </div>
-
-                <div>
-                  <WorkContainer
-                    image={<Capstone />}
-                    title={'Capstone with Google Drive API Integration'}
-                    content={'asdasdasd'} />
-                </div>
-                <div>
-                  <WorkContainer
-                    image={<Capstone />}
-                    title={'Capstone with Google Drive API Integration'}
-                    content={'asdasdasd'} />
-                </div>
-                <div>
-                  <WorkContainer
-                    image={<Capstone />}
-                    title={'Capstone with Google Drive API Integration'}
-                    content={'asdasdasd'} />
-                </div>
-
-
-              </Slider>
+              <div className="w-full">
+                <Slider {...settings} className="text-center  ">
+                  <div>
+                    <WorkContainer
+                      image={<Capstone />}
+                      title={'Well-Record with Google Drive API Integration'}
+                      status={'Private'}
+                      capstone={"Capstone"} />
+                  </div>
+                  <div>
+                    <WorkContainer
+                      image={<Capstone />}
+                      title={'Student Flow Hub Real Time Web System'}
+                      status={'Public'}
+                      capstone={'Personal Project'}
+                      website="https://studyflow-hub.vercel.app/"
+                      github="https://github.com/yoshieexD/Student-Productivity" />
+                  </div>
+                  <div>
+                    <WorkContainer
+                      image={<Capstone />}
+                      title={'Rick and Morty Api'}
+                      status={'Public'}
+                      capstone={'Personal Project'}
+                      website="https://apirickandmorty-blue.vercel.app/"
+                      github="https://github.com/yoshieexD/apirickandmorty" />
+                  </div>
+                  <div>
+                    <WorkContainer
+                      image={<Capstone />}
+                      title={'Book Buddy Library Management Basic Crud'}
+                      status={'Public'}
+                      capstone={'Personal Project'}
+                      github="https://github.com/yoshieexD/BookBuddyLibraryManagementSystem" />
+                  </div>
+                  <div>
+                    <WorkContainer
+                      image={<Capstone />}
+                      title={'Kali: The Darkness Arrive'}
+                      status={'Public'}
+                      capstone={'Group Project'}
+                      website="https://blazingwolfstudio32.itch.io/kali-the-darkness-arrive" />
+                  </div>
+                  <div>
+                    <WorkContainer
+                      image={<Capstone />}
+                      title={'Flutter Dice Game'}
+                      status={'Public'}
+                      capstone={'Personal Project'}
+                      github="https://github.com/yoshieexD/Flutter_Dice" />
+                  </div>
+                  <div>
+                    <WorkContainer
+                      image={<Capstone />}
+                      title={'Flutter Quiz App'}
+                      status={'Public'}
+                      capstone={'Personal Project'}
+                      github="https://github.com/yoshieexD/Flutter_QuizApp" />
+                  </div>
+                  <div>
+                    <WorkContainer
+                      image={<Capstone />}
+                      title={'Flutter Expenses Tracker'}
+                      status={'Public'}
+                      capstone={'Personal Project'}
+                      github="https://github.com/yoshieexD/Flutter_ExpenseTracker" />
+                  </div>
+                </Slider>
+              </div>
             </div>
           </div>
           {/*Certificate */}
