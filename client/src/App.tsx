@@ -1,4 +1,3 @@
-
 import { useDarkMode } from "./context/DarkModeContext";
 import { lightModes, darkModes } from "./theme/Theme";
 import Layout from "./layout/Layout";
@@ -10,6 +9,7 @@ import { HeaderText } from "./layout/Font";
 import { Helmet } from "react-helmet-async";
 import { Html, Css, Js, Ts, Php, Sql, TailWind, Bootstrap, Antd, ReactJs, ExpressJs, MongoDb, Npm, Postman, Git, Figma, Vercel, ReactQuery, Flutter, Flask, Python } from './asset/DevIcon';
 import { Capstone } from "./asset/Work";
+import { Javascript } from "./asset/Certificate";
 import { WorkContainer } from "./work/WorkContainer";
 
 import "slick-carousel/slick/slick.css";
@@ -124,8 +124,8 @@ export default function App() {
             <HeaderText>My Works</HeaderText>
           </div>
           <div className="w-full  flex justify-center">
-            <div className="md:w-5/6 xs:w-full xxs:w-full">
-              <div className="w-full">
+            <div className="md:w-5/6 xs:w-full xxs:w-full bg-white mx-auto">
+              <div className="w-full ">
                 <Slider {...settings} className="text-center  ">
                   <div>
                     <WorkContainer
@@ -207,6 +207,18 @@ export default function App() {
 
           <div>
             <HeaderText>Certificate</HeaderText>
+          </div>
+          <div className="w-full flex justify-center" >
+            <div className="w-5/6 grid grid-cols-4">
+              <div className="flex space-x-2 bg-slate-900 h-auto rounded-lg cursor-pointer" onClick={() => window.open('https://www.freecodecamp.org/certification/yoshieexD/javascript-algorithms-and-data-structures')}>
+                <div className="w-1/4 h-auto  flex items-center justify-center">
+                  <div className="h-12 ">
+                    <Js />
+                  </div>
+                </div>
+                <p className={`w-3/4  text-white  text-sm font-normal`}>Javascript Algorithms and Data Structures</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
