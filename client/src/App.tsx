@@ -9,9 +9,7 @@ import { HeaderText } from "./layout/Font";
 import { Helmet } from "react-helmet-async";
 import { Html, Css, Js, Ts, Php, Sql, TailWind, Bootstrap, Antd, ReactJs, ExpressJs, MongoDb, Npm, Postman, Git, Figma, Vercel, ReactQuery, Flutter, Flask, Python } from './asset/DevIcon';
 import { Capstone } from "./asset/Work";
-import { Javascript } from "./asset/Certificate";
 import { WorkContainer } from "./work/WorkContainer";
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -211,7 +209,7 @@ export default function App() {
             <HeaderText>Certificate</HeaderText>
           </div>
           <div className="w-full flex justify-center" >
-            <div className="w-5/6 grid md:grid-cols-4 xs:grid-cols-2 xxs:grid-cols-2">
+            <div className="w-5/6 grid md:grid-cols-4 xs:grid-cols-2 xxs:grid-cols-1">
               <div className="flex space-x-2 bg-slate-900 h-auto rounded-lg cursor-pointer" onMouseEnter={() => setLinks(true)} onMouseLeave={() => setLinks(false)} onClick={() => window.open('https://www.freecodecamp.org/certification/yoshieexD/javascript-algorithms-and-data-structures')}>
                 <div className="w-1/4 h-auto  flex items-center justify-center">
                   <div className="md:h-12 xs:h-full ">
