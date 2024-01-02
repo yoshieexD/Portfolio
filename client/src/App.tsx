@@ -124,7 +124,7 @@ export default function App() {
             <HeaderText>My Works</HeaderText>
           </div>
           <div className="w-full  flex justify-center">
-            <div className="md:w-5/6 xs:w-full xxs:w-full bg-white mx-auto">
+            <div className="md:w-5/6 xs:w-full xxs:w-full mx-auto">
               <div className="w-full ">
                 <Slider {...settings} className="text-center  ">
                   <div>
