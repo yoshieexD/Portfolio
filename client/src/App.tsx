@@ -15,9 +15,11 @@ import { WorkContainer } from "./work/WorkContainer";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { useState } from "react";
 
 export default function App() {
   const { darkMode } = useDarkMode();
+  const [links, setLinks] = useState(false);
   const settings = {
     dots: true,
     arrows: true,
@@ -209,17 +211,22 @@ export default function App() {
             <HeaderText>Certificate</HeaderText>
           </div>
           <div className="w-full flex justify-center" >
-            <div className="w-5/6 grid grid-cols-4">
-              <div className="flex space-x-2 bg-slate-900 h-auto rounded-lg cursor-pointer" onClick={() => window.open('https://www.freecodecamp.org/certification/yoshieexD/javascript-algorithms-and-data-structures')}>
+            <div className="w-5/6 grid md:grid-cols-4 xs:grid-cols-2 xxs:grid-cols-2">
+              <div className="flex space-x-2 bg-slate-900 h-auto rounded-lg cursor-pointer" onMouseEnter={() => setLinks(true)} onMouseLeave={() => setLinks(false)} onClick={() => window.open('https://www.freecodecamp.org/certification/yoshieexD/javascript-algorithms-and-data-structures')}>
                 <div className="w-1/4 h-auto  flex items-center justify-center">
-                  <div className="h-12 ">
+                  <div className="md:h-12 xs:h-full ">
                     <Js />
                   </div>
                 </div>
-                <p className={`w-3/4  text-white  text-sm font-normal`}>Javascript Algorithms and Data Structures</p>
+                <p className={`w-3/4  text-white  md:text-sm xs:text-xs xxs:text-xs  font-normal`}>Javascript Algorithms and Data Structures</p>
+                {links === true && (
+                  <FaArrowUpRightFromSquare className="w-[10px] text-white p-2" />
+                )}
               </div>
             </div>
           </div>
+
+
         </div>
       </div>
     </Layout >
