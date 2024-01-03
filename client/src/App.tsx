@@ -8,7 +8,7 @@ import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { HeaderText } from "./layout/Font";
 import { Helmet } from "react-helmet-async";
 import { Html, Css, Js, Ts, Php, Sql, TailWind, Bootstrap, Antd, ReactJs, ExpressJs, MongoDb, Npm, Postman, Git, Figma, Vercel, ReactQuery, Flutter, Flask, Python } from './asset/DevIcon';
-import { Capstone } from "./asset/Work";
+import { Capstone, StudentHub, Rick } from "./asset/Work";
 import { WorkContainer } from "./work/WorkContainer";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -137,7 +137,7 @@ export default function App() {
                   </div>
                   <div>
                     <WorkContainer
-                      image={<Capstone />}
+                      image={<StudentHub />}
                       title={'Student Flow Hub Real Time Web System'}
                       status={'Public'}
                       capstone={'Personal Project'}
@@ -147,7 +147,7 @@ export default function App() {
                   </div>
                   <div>
                     <WorkContainer
-                      image={<Capstone />}
+                      image={<Rick />}
                       title={'Rick and Morty Api'}
                       status={'Public'}
                       capstone={'Personal Project'}
