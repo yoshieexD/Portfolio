@@ -8,7 +8,7 @@ import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { HeaderText } from "./layout/Font";
 import { Helmet } from "react-helmet-async";
 import { Html, Css, Js, Ts, Php, Sql, TailWind, Bootstrap, Antd, ReactJs, ExpressJs, MongoDb, Npm, Postman, Git, Figma, Vercel, ReactQuery, Flutter, Flask, Python } from './asset/DevIcon';
-import { Capstone, StudentHub, Rick, Kali } from "./asset/Work";
+import { Capstone, StudentHub, Rick, Kali, Book, Quiz, Expenses, Meal } from "./asset/Work";
 import { WorkContainer } from "./work/WorkContainer";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -157,7 +157,7 @@ export default function App() {
                   </div>
                   <div>
                     <WorkContainer
-                      image={<Capstone />}
+                      image={<Book />}
                       title={'Book Buddy Library Management Basic Crud'}
                       status={'Public'}
                       capstone={'Personal Project'}
@@ -174,8 +174,8 @@ export default function App() {
                   </div>
                   <div>
                     <WorkContainer
-                      image={<Capstone />}
-                      title={'Flutter Dice Game Mobile Application'}
+                      image={<Meal />}
+                      title={'Flutter Meal Mobile Application'}
                       status={'Public'}
                       capstone={'Personal Project'}
                       github="https://github.com/yoshieexD/Flutter_Dice"
@@ -183,7 +183,7 @@ export default function App() {
                   </div>
                   <div>
                     <WorkContainer
-                      image={<Capstone />}
+                      image={<Quiz />}
                       title={'Flutter Quiz Mobile Application'}
                       status={'Public'}
                       capstone={'Personal Project'}
@@ -192,7 +192,7 @@ export default function App() {
                   </div>
                   <div>
                     <WorkContainer
-                      image={<Capstone />}
+                      image={<Expenses />}
                       title={'Flutter Expenses Tracker Mobile Application'}
                       status={'Public'}
                       capstone={'Personal Project'}
