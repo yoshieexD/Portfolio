@@ -11,37 +11,37 @@ import { Html, Css, Js, Ts, Php, Sql, TailWind, Bootstrap, Antd, ReactJs, Expres
 import { Capstone, StudentHub, Rick, Kali, Book, Quiz, Expenses, Meal } from "./asset/Work";
 import { WorkContainer } from "./work/WorkContainer";
 import { useState } from "react";
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
+
 
 export default function App() {
   const { darkMode } = useDarkMode();
   const [links, setLinks] = useState(false);
-  // const settings = {
-  //   dots: true,
-  //   arrows: true,
-  //   infinite: true,
-  //   speed: 500,
-  //   slidesToShow: 2,
-  //   slidesToScroll: 2,
-  //   responsive: [
-  //     {
-  //       breakpoint: 600,
-  //       settings: {
-  //         slidesToShow: 1,
-  //         slidesToScroll: 1,
-  //         initialSlide: 1
-  //       }
-  //     },
-  //     {
-  //       breakpoint: 1024,
-  //       settings: {
-  //         slidesToShow: 2,
-  //         slidesToScroll: 2,
-  //         initialSlide: 2
-  //       }
-  //     },
-  //   ],
-  // };
 
+  const jobs = [
+    {
+      id: 1,
+      title: "Full Stack Developer Part Time",
+      company: 'Sandbox',
+      description: 'A startup company led by Sir Aldrich Alvarez developed a full-stack web application and deployed it on Firebase. I have worked independently as well as within team settings.Tech-Stack: React.js, Express.js,Node.js, and Firebase',
+      startDate: 'February 2024',
+      endDate: 'Current',
+      link: false,
+      companyLink: 'https://www.linkedin.com/company/sandboxhq/',
+    },
+    {
+      id: 2,
+      title: 'Full Stack Developer Intern',
+      company: 'Achieve Without Borders',
+      description: 'collaborated with fellow interns and successfully released a mobile application. Tech-Stack: Flutter, Flask Odoo',
+      startDate: 'June 2023',
+      endDate: 'Oct 2023',
+      link: true,
+      companyLink: 'https://www.linkedin.com/company/achieve-without-borders/',
+
+    }
+  ]
 
   return (
     <Layout >
@@ -104,17 +104,37 @@ export default function App() {
           <div>
             <HeaderText>Experience</HeaderText>
           </div>
-          <div className={` ${darkMode === true ? 'bg-slate-800 ' : 'bg-gray-100'}  p-6 rounded-lg`}>
-            <div className="flex flex-col items-start">
-              <p className={`text-lg ${darkMode === false ? 'text-black' : 'text-white'} font-bold`}>Full Stack Developer Intern</p>
-              <div className="mt-2">
-                <p className={`text-base ${darkMode === false ? 'text-gray-600' : 'text-gray-400'} font-bold italic underline`}>488 hours completed</p>
-                <p className={`italic ${darkMode === false ? 'text-gray-600' : 'text-gray-400'}`}>Gain experience in XML-RPC, REST API, Odoo, Flutter, Flask,State Management, Agile Scrum, and Software Documentation.</p>
-                <p className={`border-0 cursor-pointer b-slate-800 hover:underline underline-offset-8 ${darkMode === false ? 'text-gray-600' : 'text-gray-400'}`} onClick={() => window.open("https://drive.google.com/file/d/1Qx8oThWMyFMX73xHN7NylQkEdt12ztX8/view?usp=sharing", "_blank")} >View Certificate <FaArrowUpRightFromSquare className="w-[10px]" /></p>
 
-              </div>
-            </div>
-          </div>
+          <VerticalTimeline>
+            {jobs.map((job) => (
+              <VerticalTimelineElement
+                key={job.id}
+                date={`${job.startDate} - ${job.endDate}`}
+                iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                contentStyle={{
+                  border: '1px solid rgb(33, 150, 243)',
+                  boxShadow: 'none',
+                  backgroundColor: darkMode ? 'rgb(30, 41, 59)' : 'white',
+                  color: darkMode ? 'white' : 'black',
+                  borderColor: darkMode ? 'rgb(75, 85, 99)' : 'rgb(229, 231, 235)',
+                }}
+                className={`transition-all duration-300 ease-in-out`}
+              >
+                <h3 >{job.title}</h3>
+                <h4 >{job.company}</h4>
+                <p className={`italic ${darkMode === false ? 'text-gray-600' : 'text-gray-400'}`}>{job.description}</p>
+                <div className="flex space-x-2">
+                  {
+                    job.link === true && (
+                      <p className={`border-0 cursor-pointer b-slate-800 hover:underline underline-offset-8 ${darkMode === false ? 'text-gray-600' : 'text-gray-400'}`} onClick={() => window.open("https://drive.google.com/file/d/1Qx8oThWMyFMX73xHN7NylQkEdt12ztX8/view?usp=sharing", "_blank")} >View Certificate <FaArrowUpRightFromSquare className="w-[10px]" /></p>
+                    )
+                  }
+                  <p className={`border-0 cursor-pointer b-slate-800 hover:underline underline-offset-8 ${darkMode === false ? 'text-gray-600' : 'text-gray-400'}`} onClick={() => window.open(`${job.companyLink}`, "_blank")} >Company Link <FaArrowUpRightFromSquare className="w-[10px]" /></p>
+                </div>
+
+              </VerticalTimelineElement>
+            ))}
+          </VerticalTimeline>
 
           {/* Work*/}
           <div>
@@ -161,7 +181,7 @@ export default function App() {
                     github="https://github.com/yoshieexD/BookBuddyLibraryManagementSystem"
                     description={
                       <>
-                        A personal project aimed at helping library to manage books. The tech stack I used included <strong>React.js</strong>,<strong>tailwind</strong>, <strong>Express.js</strong>, <strong>Node.js</strong>, <strong>MongoDB</strong>, and <strong>React Query</strong> for Real Time.
+                        A personal project aimed at helping library to manage books. The tech stack I used included <strong>React.js</strong>,<strong>Bootsrap</strong>, <strong>Express.js</strong>, <strong>Node.js</strong> and <strong>MongoDB</strong>.
                       </>
                     }
                     development="Full Stack" />
