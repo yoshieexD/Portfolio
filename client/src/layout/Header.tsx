@@ -10,7 +10,7 @@ const Header: FC<HeaderProps> = ({ darkMode, toggleDarkMode }) => {
     return (
         <div className='flex justify-between mb-20'>
             <div className={`text-xl font-bold ${darkMode ? 'text-white' : 'text-slate-950'}`}>Jom Dev.</div>
-            <Button className={` ${darkMode ? 'bg-slate-800 text-white' : 'bg-gray-100'} transition-all duration-300`} click={toggleDarkMode}>
+            <Button click={toggleDarkMode}>
                 {darkMode ? <RiMoonClearLine size={20} className="hover:animate-ping" /> : <RiSunLine size={20} className="hover:animate-spin" />}
             </Button>
         </div>

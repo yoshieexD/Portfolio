@@ -11,16 +11,18 @@ interface WorkContainerProps {
     website?: string,
     capstone?: string,
     development?: string,
+    description?: ReactNode,
 }
-export const WorkContainer: FC<WorkContainerProps> = ({ image, status, title, github, website, capstone, development }) => {
+export const WorkContainer: FC<WorkContainerProps> = ({ image, status, title, github, website, capstone, development, description }) => {
     const { darkMode } = useDarkMode();
     return (
-        <div className={` ${darkMode === true ? 'bg-slate-800 ' : 'bg-gray-100'}   rounded-lg md:w-5/6 xs:w-full xxs:w-full h-full pb-2`}>
-            <div className='w-full text-center h-4/5'>
+        <div className={` border-[1px] border-solid rounded-lg pb-4 ${darkMode === true ? 'bg-slate-800 border-gray-700  hover:bg-slate-900' : 'border-gray-200  hover:bg-blue-50 '} h-[100%]`}>
+            <div className='w-full text-center h-[50%]'>
                 {image}
             </div>
-            <div className='flex flex-col  px-2'>
-                <p className='text-base  font-bold '>{title}</p>
+            <div className='flex flex-col px-2  h-[50%] px-3'>
+                <p className='text-base  font-bold min-h-[10%]'>{title}</p>
+                <div className=' text-left pb-4 text-base h-[70%]'>{description}</div>
                 <div className='flex md:flex-row md:justify-between xs:flex-col xs:justify-center xs:items-center xxs:flex-col xxs:justify-center xxs:items-center xs:space-y-2 xxs:space-y-2'>
                     <div className='flex space-x-2  w-auto'>
 
@@ -35,7 +37,7 @@ export const WorkContainer: FC<WorkContainerProps> = ({ image, status, title, gi
                             {capstone}
                         </div>
 
-                        <div className={`${development === "Full Stack" ? " bg-violet-500 w-auto rounded-lg text-violet-900" : development === "Front End" ? "bg-yellow-500 w-auto rounded-lg text-yellow-900" : ""} text-nowrap flex items-center justify-center`}>
+                        <div className={`${development === "Full Stack" ? " bg-violet-500 w-auto rounded-lg text-violet-900" : development === "Front End" ? "bg-yellow-500 w-auto rounded-lg text-yellow-900" : ""} text-nowrap flex items-center justify-center px-2`}>
                             {development}
                         </div>
 

@@ -10,40 +10,37 @@ import { Helmet } from "react-helmet-async";
 import { Html, Css, Js, Ts, Php, Sql, TailWind, Bootstrap, Antd, ReactJs, ExpressJs, MongoDb, Npm, Postman, Git, Figma, Vercel, ReactQuery, Flutter, Flask, Python } from './asset/DevIcon';
 import { Capstone, StudentHub, Rick, Kali, Book, Quiz, Expenses, Meal } from "./asset/Work";
 import { WorkContainer } from "./work/WorkContainer";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
 import { useState } from "react";
 
 export default function App() {
   const { darkMode } = useDarkMode();
   const [links, setLinks] = useState(false);
-  const settings = {
-    dots: true,
-    arrows: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 2,
-    slidesToScroll: 2,
-    responsive: [
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          initialSlide: 1
-        }
-      },
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2
-        }
-      },
-    ],
-  };
+  // const settings = {
+  //   dots: true,
+  //   arrows: true,
+  //   infinite: true,
+  //   speed: 500,
+  //   slidesToShow: 2,
+  //   slidesToScroll: 2,
+  //   responsive: [
+  //     {
+  //       breakpoint: 600,
+  //       settings: {
+  //         slidesToShow: 1,
+  //         slidesToScroll: 1,
+  //         initialSlide: 1
+  //       }
+  //     },
+  //     {
+  //       breakpoint: 1024,
+  //       settings: {
+  //         slidesToShow: 2,
+  //         slidesToScroll: 2,
+  //         initialSlide: 2
+  //       }
+  //     },
+  //   ],
+  // };
 
 
   return (
@@ -124,83 +121,125 @@ export default function App() {
             <HeaderText>My Works</HeaderText>
           </div>
           <div className="w-full  flex justify-center">
-            <div className="md:w-5/6 xs:w-full xxs:w-full mx-auto">
-              <div className="w-full ">
-                <Slider {...settings} className="text-center  ">
-                  <div>
-                    <WorkContainer
-                      image={<Capstone />}
-                      title={'Well-Record with Google Drive API Integration'}
-                      status={'Private'}
-                      capstone={"Capstone"}
-                      development="Full Stack" />
-                  </div>
-                  <div>
-                    <WorkContainer
-                      image={<StudentHub />}
-                      title={'Student Flow Hub Real Time Web System'}
-                      status={'Public'}
-                      capstone={'Personal Project'}
-                      website="https://studyflow-hub.vercel.app/"
-                      github="https://github.com/yoshieexD/Student-Productivity"
-                      development="Full Stack" />
-                  </div>
-                  <div>
-                    <WorkContainer
-                      image={<Rick />}
-                      title={'Rick and Morty Api'}
-                      status={'Public'}
-                      capstone={'Personal Project'}
-                      website="https://apirickandmorty-blue.vercel.app/"
-                      github="https://github.com/yoshieexD/apirickandmorty"
-                      development="Front End" />
-                  </div>
-                  <div>
-                    <WorkContainer
-                      image={<Book />}
-                      title={'Book Buddy Library Management Basic Crud'}
-                      status={'Public'}
-                      capstone={'Personal Project'}
-                      github="https://github.com/yoshieexD/BookBuddyLibraryManagementSystem"
-                      development="Full Stack" />
-                  </div>
-                  <div>
-                    <WorkContainer
-                      image={<Kali />}
-                      title={'Kali: The Darkness Arrive'}
-                      status={'Public'}
-                      capstone={'Group Project'}
-                      website="https://blazingwolfstudio32.itch.io/kali-the-darkness-arrive" />
-                  </div>
-                  <div>
-                    <WorkContainer
-                      image={<Meal />}
-                      title={'Flutter Meal Mobile Application'}
-                      status={'Public'}
-                      capstone={'Personal Project'}
-                      github="https://github.com/yoshieexD/Flutter_Dice"
-                      development="Front End" />
-                  </div>
-                  <div>
-                    <WorkContainer
-                      image={<Quiz />}
-                      title={'Flutter Quiz Mobile Application'}
-                      status={'Public'}
-                      capstone={'Personal Project'}
-                      github="https://github.com/yoshieexD/Flutter_QuizApp"
-                      development="Front End" />
-                  </div>
-                  <div>
-                    <WorkContainer
-                      image={<Expenses />}
-                      title={'Flutter Expenses Tracker Mobile Application'}
-                      status={'Public'}
-                      capstone={'Personal Project'}
-                      github="https://github.com/yoshieexD/Flutter_ExpenseTracker"
-                      development="Front End" />
-                  </div>
-                </Slider>
+            <div className="md:w-5/6 xs:w-full xxs:w-full mx-auto ">
+              <div className="grid xxs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 space-y-4">
+                <div className="">
+                  <WorkContainer
+                    image={<Capstone />}
+                    title={'Well-Record: Medical Record Management and Medicine Inventory System'}
+                    status={'Private'}
+                    capstone={"Capstone"}
+                    description={
+                      <>
+                        A capstone project where I was the lead developer. The tech stack I used included <strong>React.js</strong>, , <strong>AntD + Tailwind</strong>,<strong>Express.js</strong>, <strong>Node.js</strong>, <strong>MongoDB</strong>, and <strong>Google Drive API</strong> for file storage.
+                      </>
+                    }
+                    development="Full Stack" />
+                </div>
+                <div>
+                  <WorkContainer
+                    image={<StudentHub />}
+                    title={'Student Flow Hub'}
+                    status={'Public'}
+                    capstone={'Personal Project'}
+                    description={
+                      <>
+                        A personal project aimed at helping students become more productive. The tech stack I used included <strong>React.js</strong>,<strong>Tailwind</strong> <strong>Express.js</strong>, <strong>Node.js</strong>, <strong>MongoDB</strong>, and <strong>React Query</strong> for Real Time.
+                      </>
+                    }
+                    website="https://studyflow-hub.vercel.app/"
+                    github="https://github.com/yoshieexD/Student-Productivity"
+                    development="Full Stack" />
+                </div>
+
+                <div>
+                  <WorkContainer
+                    image={<Book />}
+                    title={'Book Buddy Library Management Basic Crud'}
+                    status={'Public'}
+                    capstone={'Personal Project'}
+                    github="https://github.com/yoshieexD/BookBuddyLibraryManagementSystem"
+                    description={
+                      <>
+                        A personal project aimed at helping library to manage books. The tech stack I used included <strong>React.js</strong>,<strong>tailwind</strong>, <strong>Express.js</strong>, <strong>Node.js</strong>, <strong>MongoDB</strong>, and <strong>React Query</strong> for Real Time.
+                      </>
+                    }
+                    development="Full Stack" />
+                </div>
+                <div>
+                  <WorkContainer
+                    image={<Kali />}
+                    title={'Kali: The Darkness Arrive'}
+                    status={'Public'}
+                    capstone={'Group Project'}
+                    description={
+                      <>
+                        A group project for our subject game development. The tech stack we used included <strong>Unity</strong> and <strong>C#</strong> programming language.
+                      </>
+                    }
+                    website="https://blazingwolfstudio32.itch.io/kali-the-darkness-arrive" />
+                </div>
+                <div>
+                  <WorkContainer
+                    image={<Rick />}
+                    title={'Rick and Morty API'}
+                    status={'Public'}
+                    capstone={'Personal Project'}
+                    description={
+                      <>
+                        A personal project. The tech stack I used included <strong>React.js</strong> and <strong>Rick and Morty API</strong>.
+                      </>
+                    }
+                    website="https://apirickandmorty-blue.vercel.app/"
+                    github="https://github.com/yoshieexD/apirickandmorty"
+                    development="Front End" />
+                </div>
+                <div>
+                  <WorkContainer
+                    image={<Meal />}
+                    title={'Flutter Meal Mobile Application'}
+                    status={'Public'}
+                    capstone={'Personal Project'}
+                    description={
+                      <>
+                        A personal project. The tech stack I used included <strong>Flutter</strong>.
+                      </>
+                    }
+                    github="https://github.com/yoshieexD/Flutter_Dice"
+                    development="Front End" />
+                </div>
+
+                <div>
+                  <WorkContainer
+                    image={<Quiz />}
+                    title={'Flutter Quiz Mobile Application'}
+                    status={'Public'}
+                    capstone={'Personal Project'}
+                    description={
+                      <>
+                        A personal project. The tech stack I used included <strong>Flutter</strong>.
+                      </>
+                    }
+                    github="https://github.com/yoshieexD/Flutter_QuizApp"
+                    development="Front End" />
+                </div>
+                <div>
+                  <WorkContainer
+                    image={<Expenses />}
+                    title={'Flutter Expenses Tracker Mobile Application'}
+                    status={'Public'}
+                    capstone={'Personal Project'}
+                    description={
+                      <>
+                        A personal project. The tech stack I used included <strong>Flutter</strong>.
+                      </>
+                    }
+                    github="https://github.com/yoshieexD/Flutter_ExpenseTracker"
+                    development="Front End" />
+                </div>
+
               </div>
+
             </div>
           </div>
           {/*Certificate */}
