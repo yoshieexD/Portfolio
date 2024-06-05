@@ -18,6 +18,7 @@ import 'react-vertical-timeline-component/style.min.css';
 export default function App() {
   const { darkMode } = useDarkMode();
   const [links, setLinks] = useState(false);
+  const [isWeb, setIsWeb] = useState(true);
 
   const jobs = [
     {
@@ -26,7 +27,7 @@ export default function App() {
       company: 'Sandbox',
       description: 'A startup company led by Sir Aldrich Alvarez developed a full-stack web application and deployed it on Firebase. I have worked independently as well as within team settings.Tech-Stack: React.js, Express.js,Node.js, and Firebase',
       startDate: 'February 2024',
-      endDate: 'Current',
+      endDate: 'June 2024',
       link: false,
       companyLink: 'https://www.linkedin.com/company/sandboxhq/',
     },
@@ -40,6 +41,115 @@ export default function App() {
       link: true,
       companyLink: 'https://www.linkedin.com/company/achieve-without-borders/',
 
+    }
+  ]
+
+  const project = [
+    {
+      image: <Capstone />,
+      title: 'Well-Record: Medical Record Management and Medicine Inventory System',
+      status: 'Private',
+      capstone: 'Capstone',
+      description: <>A capstone project where I was the lead developer. The tech stack I used included <strong>React.js</strong>, , <strong>AntD + Tailwind</strong>,<strong>Express.js</strong>, <strong>Node.js</strong>, <strong>MongoDB</strong>, and <strong>Google Drive API</strong> for file storage.</>,
+      development: 'Full Stack',
+      web: true
+    },
+    {
+      image: <StudentHub />,
+      title: 'Student Flow Hub',
+      status: 'Public',
+      capstone: 'Personal Projeect',
+      description:
+        <>
+          A personal project aimed at helping students become more productive. The tech stack I used included <strong>React.js</strong>,<strong>Tailwind</strong> <strong>Express.js</strong>, <strong>Node.js</strong>, <strong>MongoDB</strong>, and <strong>React Query</strong> for Real Time.
+        </>,
+      website: "https://studyflow-hub.vercel.app/",
+      github: "https://github.com/yoshieexD/Student-Productivity",
+      development: "Full Stack",
+      web: true
+    },
+    {
+      image: <Book />,
+      title: 'Book Buddy Library Management Basic Crud',
+      status: 'Public',
+      capstone: 'Personal Project',
+      github: "https://github.com/yoshieexD/BookBuddyLibraryManagementSystem",
+      description:
+        <>
+          A personal project aimed at helping library to manage books. The tech stack I used included <strong>React.js</strong>,<strong>Bootsrap</strong>, <strong>Express.js</strong>, <strong>Node.js</strong> and <strong>MongoDB</strong>.
+        </>
+      ,
+      development: "Full Stack",
+      web: true
+    },
+    {
+      image: < Kali />,
+      title: 'Kali: The Darkness Arrive',
+      status: 'Public',
+      capstone: 'Group Project',
+      description:
+        <>
+          A group project for our subject game development.The tech stack we used included < strong > Unity</strong > and < strong > C#</strong > programming language.
+        </>,
+      website: "https://blazingwolfstudio32.itch.io/kali-the-darkness-arrive",
+      web: true
+    },
+    {
+
+      image: <Rick />,
+      title: 'Rick and Morty API',
+      status: 'Public',
+      capstone: 'Personal Project',
+      description:
+        <>
+          A personal project. The tech stack I used included <strong>React.js</strong> and <strong>Rick and Morty API</strong>.
+        </>,
+      website: "https://apirickandmorty-blue.vercel.app/",
+      github: "https://github.com/yoshieexD/apirickandmorty",
+      development: "Front End",
+      web: true
+    },
+    {
+      image: <Meal />,
+      title: 'Flutter Meal Mobile Application',
+      status: 'Public',
+      capstone: 'Personal Project',
+      description:
+        <>
+          A personal project. The tech stack I used included <strong>Flutter</strong>.
+        </>
+      ,
+      github: "https://github.com/yoshieexD/Flutter_MealApp",
+      development: "Front End",
+      web: false
+    },
+    {
+      image: <Quiz />,
+      title: 'Flutter Quiz Mobile A pplication',
+      status: 'Public',
+      capstone: 'Personal Project',
+      description:
+        <>
+          A personal project. The tech stack I used included <strong>Flutter</strong>.
+        </>
+      ,
+      github: "https://github.com/yoshieexD/Flutter_QuizApp",
+      development: "Front End",
+      web: false
+    },
+    {
+      image: <Expenses />,
+      title: 'Flutter Expenses Tracker Mobile Application',
+      status: 'Public',
+      capstone: 'Personal Project',
+      description:
+        <>
+          A personal project. The tech stack I used included <strong>Flutter</strong>.
+        </>
+      ,
+      github: "https://github.com/yoshieexD/Flutter_ExpenseTracker",
+      development: "Front End",
+      web: false
     }
   ]
 
@@ -140,124 +250,41 @@ export default function App() {
           <div>
             <HeaderText>My Works</HeaderText>
           </div>
+
+          <div className="space-x-4">
+            <button
+              className={`bg-transparent border-0 text-base cursor-pointer 
+              ${isWeb ? `border-b-2 ${darkMode ? 'border-white' : ''}` : ''} 
+              ${darkMode ? 'text-gray-400' : 'text-gray-600'}
+              `}
+              onClick={() => setIsWeb(true)}
+            >
+              Web
+            </button>
+
+            <button className={`
+              bg-transparent border-0 text-base cursor-pointer
+              ${isWeb === false ? `border-b-2 ${darkMode ? 'border-white' : ''}` : ''} 
+              ${darkMode ? 'text-gray-400' : 'text-gray-600'}
+              `}
+              onClick={() => setIsWeb(false)}>Mobile</button>
+          </div>
           <div className="w-full  flex justify-center">
             <div className="md:w-5/6 xs:w-full xxs:w-full mx-auto ">
-              <div className="grid xxs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 space-y-4">
-                <div className="">
-                  <WorkContainer
-                    image={<Capstone />}
-                    title={'Well-Record: Medical Record Management and Medicine Inventory System'}
-                    status={'Private'}
-                    capstone={"Capstone"}
-                    description={
-                      <>
-                        A capstone project where I was the lead developer. The tech stack I used included <strong>React.js</strong>, , <strong>AntD + Tailwind</strong>,<strong>Express.js</strong>, <strong>Node.js</strong>, <strong>MongoDB</strong>, and <strong>Google Drive API</strong> for file storage.
-                      </>
-                    }
-                    development="Full Stack" />
-                </div>
-                <div>
-                  <WorkContainer
-                    image={<StudentHub />}
-                    title={'Student Flow Hub'}
-                    status={'Public'}
-                    capstone={'Personal Project'}
-                    description={
-                      <>
-                        A personal project aimed at helping students become more productive. The tech stack I used included <strong>React.js</strong>,<strong>Tailwind</strong> <strong>Express.js</strong>, <strong>Node.js</strong>, <strong>MongoDB</strong>, and <strong>React Query</strong> for Real Time.
-                      </>
-                    }
-                    website="https://studyflow-hub.vercel.app/"
-                    github="https://github.com/yoshieexD/Student-Productivity"
-                    development="Full Stack" />
-                </div>
-
-                <div>
-                  <WorkContainer
-                    image={<Book />}
-                    title={'Book Buddy Library Management Basic Crud'}
-                    status={'Public'}
-                    capstone={'Personal Project'}
-                    github="https://github.com/yoshieexD/BookBuddyLibraryManagementSystem"
-                    description={
-                      <>
-                        A personal project aimed at helping library to manage books. The tech stack I used included <strong>React.js</strong>,<strong>Bootsrap</strong>, <strong>Express.js</strong>, <strong>Node.js</strong> and <strong>MongoDB</strong>.
-                      </>
-                    }
-                    development="Full Stack" />
-                </div>
-                <div>
-                  <WorkContainer
-                    image={<Kali />}
-                    title={'Kali: The Darkness Arrive'}
-                    status={'Public'}
-                    capstone={'Group Project'}
-                    description={
-                      <>
-                        A group project for our subject game development. The tech stack we used included <strong>Unity</strong> and <strong>C#</strong> programming language.
-                      </>
-                    }
-                    website="https://blazingwolfstudio32.itch.io/kali-the-darkness-arrive" />
-                </div>
-                <div>
-                  <WorkContainer
-                    image={<Rick />}
-                    title={'Rick and Morty API'}
-                    status={'Public'}
-                    capstone={'Personal Project'}
-                    description={
-                      <>
-                        A personal project. The tech stack I used included <strong>React.js</strong> and <strong>Rick and Morty API</strong>.
-                      </>
-                    }
-                    website="https://apirickandmorty-blue.vercel.app/"
-                    github="https://github.com/yoshieexD/apirickandmorty"
-                    development="Front End" />
-                </div>
-                <div>
-                  <WorkContainer
-                    image={<Meal />}
-                    title={'Flutter Meal Mobile Application'}
-                    status={'Public'}
-                    capstone={'Personal Project'}
-                    description={
-                      <>
-                        A personal project. The tech stack I used included <strong>Flutter</strong>.
-                      </>
-                    }
-                    github="https://github.com/yoshieexD/Flutter_Dice"
-                    development="Front End" />
-                </div>
-
-                <div>
-                  <WorkContainer
-                    image={<Quiz />}
-                    title={'Flutter Quiz Mobile Application'}
-                    status={'Public'}
-                    capstone={'Personal Project'}
-                    description={
-                      <>
-                        A personal project. The tech stack I used included <strong>Flutter</strong>.
-                      </>
-                    }
-                    github="https://github.com/yoshieexD/Flutter_QuizApp"
-                    development="Front End" />
-                </div>
-                <div>
-                  <WorkContainer
-                    image={<Expenses />}
-                    title={'Flutter Expenses Tracker Mobile Application'}
-                    status={'Public'}
-                    capstone={'Personal Project'}
-                    description={
-                      <>
-                        A personal project. The tech stack I used included <strong>Flutter</strong>.
-                      </>
-                    }
-                    github="https://github.com/yoshieexD/Flutter_ExpenseTracker"
-                    development="Front End" />
-                </div>
-
+              <div className="grid gap-4 xxs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+                {project.filter(item => item.web === isWeb).map((project) => (
+                  <div className="mb-4">
+                    <WorkContainer
+                      image={project.image}
+                      title={project.title}
+                      status={project.status}
+                      capstone={project.capstone}
+                      description={project.description}
+                      github={project.github}
+                      development={project.development}
+                    />
+                  </div>
+                ))}
               </div>
 
             </div>
