@@ -16,12 +16,12 @@ interface WorkContainerProps {
 export const WorkContainer: FC<WorkContainerProps> = ({ image, status, title, github, website, capstone, development, description }) => {
     const { darkMode } = useDarkMode();
     return (
-        <div className={` border-[1px] border-solid rounded-lg pb-4 ${darkMode === true ? 'bg-slate-800 border-gray-700  hover:bg-slate-900' : 'border-gray-200  hover:bg-blue-50 '} h-[100%]`}>
-            <div className='w-full text-center h-[50%]'>
+        <div className={` border-[1px] border-solid rounded-lg pb-4 ${darkMode === true ? 'bg-slate-800 border-gray-700  hover:bg-slate-900' : 'border-gray-200  hover:bg-blue-50 '} sm:h-[100%]`}>
+            <div className='w-full text-center xxs:h-[50%] sm:h-[40%] md:h-[50%]'>
                 {image}
             </div>
             <div className='flex flex-col px-2  h-[50%] px-3'>
-                <p className='text-base  font-bold min-h-[10%]'>{title}</p>
+                <p className='text-base  font-bold md:min-h-[10%]'>{title}</p>
                 <div className=' text-left pb-4 text-base h-[70%]'>{description}</div>
                 <div className='flex md:flex-row md:justify-between xs:flex-col xs:justify-center xs:items-center xxs:flex-col xxs:justify-center xxs:items-center xs:space-y-2 xxs:space-y-2'>
                     <div className='flex space-x-2  w-auto'>

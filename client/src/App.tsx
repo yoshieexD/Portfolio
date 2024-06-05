@@ -58,7 +58,7 @@ export default function App() {
       image: <StudentHub />,
       title: 'Student Flow Hub',
       status: 'Public',
-      capstone: 'Personal Projeect',
+      capstone: 'Personal Project',
       description:
         <>
           A personal project aimed at helping students become more productive. The tech stack I used included <strong>React.js</strong>,<strong>Tailwind</strong> <strong>Express.js</strong>, <strong>Node.js</strong>, <strong>MongoDB</strong>, and <strong>React Query</strong> for Real Time.
@@ -273,13 +273,14 @@ export default function App() {
             <div className="md:w-5/6 xs:w-full xxs:w-full mx-auto ">
               <div className="grid gap-4 xxs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
                 {project.filter(item => item.web === isWeb).map((project) => (
-                  <div className="mb-4">
+                  <div className="mb-4 h-auto">
                     <WorkContainer
                       image={project.image}
                       title={project.title}
                       status={project.status}
                       capstone={project.capstone}
                       description={project.description}
+                      website={project.website}
                       github={project.github}
                       development={project.development}
                     />
