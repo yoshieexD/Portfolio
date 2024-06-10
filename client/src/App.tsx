@@ -8,7 +8,7 @@ import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { HeaderText } from "./layout/Font";
 import { Helmet } from "react-helmet-async";
 import { Html, Css, Js, Ts, Php, Sql, TailWind, Bootstrap, Antd, ReactJs, ExpressJs, MongoDb, Npm, Postman, Git, Figma, Vercel, ReactQuery, Flutter, Flask, Python } from './asset/DevIcon';
-import { Capstone, StudentHub, Rick, Kali, Book, Quiz, Expenses, Meal } from "./asset/Work";
+import { Capstone, StudentHub, Rick, Kali, Book, Quiz, Expenses, Meal, Company } from "./asset/Work";
 import { WorkContainer } from "./work/WorkContainer";
 import { useState } from "react";
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
@@ -93,6 +93,20 @@ export default function App() {
         </>,
       website: "https://blazingwolfstudio32.itch.io/kali-the-darkness-arrive",
       web: true
+    },
+    {
+      image: <Company />,
+      title: 'ABC - COMPANY',
+      status: 'Public',
+      capstone: 'Personal Project',
+      description:
+        <>
+          A personal project. The tech stack I used included <strong>HTML</strong> and <strong>Bootstrap</strong>
+        </>,
+      github: 'https://github.com/yoshieexD/Company',
+      website: 'http://abc12.infinityfreeapp.com/',
+      development: 'Front End',
+      web: true,
     },
     {
 

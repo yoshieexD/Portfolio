@@ -6,6 +6,7 @@ import book from './img/book.png';
 import quiz from './img/quiz.png';
 import expense from './img/expense.png';
 import meal from './img/meal.png';
+import companys from './img/company.png';
 export const Capstone = () => {
     return (
         <img src={capstone} alt='capstone' className='w-full h-full rounded-t-lg' />
@@ -52,6 +53,13 @@ export const Expenses = () => {
 export const Meal = () => {
     return (
         <img src={meal} alt='meal' className='w-full h-full rounded-t-lg' />
+
+    )
+}
+
+export const Company = () => {
+    return (
+        <img src={companys} alt='meal' className='w-full h-full rounded-t-lg' />
 
     )
 }
