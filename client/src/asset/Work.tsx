@@ -7,6 +7,8 @@ import quiz from './img/quiz.png';
 import expense from './img/expense.png';
 import meal from './img/meal.png';
 import companys from './img/company.png';
+import rodman from './img/rodman.png';
+import bolt from './img/usianbolt.png';
 export const Capstone = () => {
     return (
         <img src={capstone} alt='capstone' className='w-full h-full rounded-t-lg' />
@@ -60,6 +62,21 @@ export const Meal = () => {
 export const Company = () => {
     return (
         <img src={companys} alt='meal' className='w-full h-full rounded-t-lg' />
+
+    )
+}
+
+
+export const Rodman = () => {
+    return (
+        <img src={rodman} alt='rodman' className='w-full h-full rounded-t-lg' />
+
+    )
+}
+
+export const Bolt = () => {
+    return (
+        <img src={bolt} alt='bolt' className='w-full h-full rounded-t-lg' />
 
     )
 }

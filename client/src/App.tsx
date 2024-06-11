@@ -8,17 +8,19 @@ import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { HeaderText } from "./layout/Font";
 import { Helmet } from "react-helmet-async";
 import { Html, Css, Js, Ts, Php, Sql, TailWind, Bootstrap, Antd, ReactJs, ExpressJs, MongoDb, Npm, Postman, Git, Figma, Vercel, ReactQuery, Flutter, Flask, Python } from './asset/DevIcon';
-import { Capstone, StudentHub, Rick, Kali, Book, Quiz, Expenses, Meal, Company } from "./asset/Work";
+import { Capstone, StudentHub, Rick, Kali, Book, Quiz, Expenses, Meal, Company, Rodman, Bolt } from "./asset/Work";
 import { WorkContainer } from "./work/WorkContainer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
+import { BallTriangle } from "react-loader-spinner";
 
 
 export default function App() {
   const { darkMode } = useDarkMode();
   const [links, setLinks] = useState(false);
-  const [isWeb, setIsWeb] = useState(true);
+  const [isWeb, setIsWeb] = useState('web');
+  const [loading, setLoading] = useState(true);
 
   const jobs = [
     {
@@ -52,7 +54,7 @@ export default function App() {
       capstone: 'Capstone',
       description: <>A capstone project where I was the lead developer. The tech stack I used included <strong>React.js</strong>, , <strong>AntD + Tailwind</strong>,<strong>Express.js</strong>, <strong>Node.js</strong>, <strong>MongoDB</strong>, and <strong>Google Drive API</strong> for file storage.</>,
       development: 'Full Stack',
-      web: true
+      web: 'web'
     },
     {
       image: <StudentHub />,
@@ -66,7 +68,7 @@ export default function App() {
       website: "https://studyflow-hub.vercel.app/",
       github: "https://github.com/yoshieexD/Student-Productivity",
       development: "Full Stack",
-      web: true
+      web: 'web'
     },
     {
       image: <Book />,
@@ -80,7 +82,7 @@ export default function App() {
         </>
       ,
       development: "Full Stack",
-      web: true
+      web: 'web'
     },
     {
       image: < Kali />,
@@ -92,7 +94,7 @@ export default function App() {
           A group project for our subject game development.The tech stack we used included < strong > Unity</strong > and < strong > C#</strong > programming language.
         </>,
       website: "https://blazingwolfstudio32.itch.io/kali-the-darkness-arrive",
-      web: true
+      web: 'web'
     },
     {
       image: <Company />,
@@ -106,7 +108,7 @@ export default function App() {
       github: 'https://github.com/yoshieexD/Company',
       website: 'http://abc12.infinityfreeapp.com/',
       development: 'Front End',
-      web: true,
+      web: 'web',
     },
     {
 
@@ -121,7 +123,7 @@ export default function App() {
       website: "https://apirickandmorty-blue.vercel.app/",
       github: "https://github.com/yoshieexD/apirickandmorty",
       development: "Front End",
-      web: true
+      web: 'web'
     },
     {
       image: <Meal />,
@@ -135,7 +137,7 @@ export default function App() {
       ,
       github: "https://github.com/yoshieexD/Flutter_MealApp",
       development: "Front End",
-      web: false
+      web: 'mobile'
     },
     {
       image: <Quiz />,
@@ -149,7 +151,7 @@ export default function App() {
       ,
       github: "https://github.com/yoshieexD/Flutter_QuizApp",
       development: "Front End",
-      web: false
+      web: 'mobile'
     },
     {
       image: <Expenses />,
@@ -163,10 +165,38 @@ export default function App() {
       ,
       github: "https://github.com/yoshieexD/Flutter_ExpenseTracker",
       development: "Front End",
-      web: false
-    }
+      web: 'mobile'
+    },
+    {
+      image: <Rodman />,
+      title: 'Fan Art: Dennis Rodman',
+      description:
+        <>
+          Fan art for a former professional basketball player Dennis Rodman who is widely recognized as one of the most unique and enigmatic figures in the history of the sport.
+          created using <strong>Photoshop</strong>
+        </>
+      ,
+      website: 'https://drive.google.com/file/d/1cU9-M6qiqoOMGK03ZFe0yRhlqpGAkk7-/view',
+      web: 'graphic'
+    },
+    {
+      image: <Bolt />,
+      title: 'FanArt: Usain Bolt',
+      description:
+        <>A fanart for a Jamaican former sprinter Usian bolt who is widely regarded as one of the greatest athletes of all time. created using <strong>Photoshop<strong></strong></strong>
+        </>,
+      website: 'https://drive.google.com/file/d/1W9DDngNDlhgnF6iYze8jTDNnfj2RdauP/view',
+      web: 'graphic',
+    },
   ]
 
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+    return () => clearTimeout(timeout);
+  }, [isWeb]);
   return (
     <Layout >
       <Helmet>
@@ -268,44 +298,67 @@ export default function App() {
           <div className="space-x-4">
             <button
               className={`bg-transparent border-0 text-base cursor-pointer 
-              ${isWeb ? `border-b-2 ${darkMode ? 'border-white' : ''}` : ''} 
+              ${isWeb === 'web' ? `border-b-2 ${darkMode ? 'border-white' : ''}` : ''} 
               ${darkMode ? 'text-gray-400' : 'text-gray-600'}
               `}
-              onClick={() => setIsWeb(true)}
+              onClick={() => { setIsWeb('web'); setLoading(true); }}
             >
               Web
             </button>
 
             <button className={`
               bg-transparent border-0 text-base cursor-pointer
-              ${isWeb === false ? `border-b-2 ${darkMode ? 'border-white' : ''}` : ''} 
+              ${isWeb === 'mobile' ? `border-b-2 ${darkMode ? 'border-white' : ''}` : ''} 
               ${darkMode ? 'text-gray-400' : 'text-gray-600'}
               `}
-              onClick={() => setIsWeb(false)}>Mobile</button>
+              onClick={() => { setIsWeb('mobile'); setLoading(true) }}>Mobile</button>
+            <button className={`
+              bg-transparent border-0 text-base cursor-pointer
+              ${isWeb === 'graphic' ? `border-b-2 ${darkMode ? 'border-white' : ''}` : ''} 
+              ${darkMode ? 'text-gray-400' : 'text-gray-600'}
+              `}
+              onClick={() => { setIsWeb('graphic'); setLoading(true) }}>Graphic Design</button>
           </div>
           <div className="w-full  flex justify-center">
             <div className="md:w-5/6 xs:w-full xxs:w-full mx-auto ">
-              <div className="grid gap-4 xxs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-                {project.filter(item => item.web === isWeb).map((project) => (
-                  <div className="mb-4 h-auto">
-                    <WorkContainer
-                      image={project.image}
-                      title={project.title}
-                      status={project.status}
-                      capstone={project.capstone}
-                      description={project.description}
-                      website={project.website}
-                      github={project.github}
-                      development={project.development}
-                    />
-                  </div>
-                ))}
-              </div>
-
+              {loading ? (
+                <div className="flex justify-center items-center">
+                  <BallTriangle
+                    height={100}
+                    width={100}
+                    radius={5}
+                    color="#4fa94d"
+                    ariaLabel="ball-triangle-loading"
+                    wrapperStyle={{}}
+                    wrapperClass=""
+                    visible={loading}
+                  />
+                </div>
+              ) : (
+                <div className="grid gap-4 xxs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+                  {project.filter(item => item.web === isWeb).length > 0 ? (
+                    project.filter(item => item.web === isWeb).map((project) => (
+                      <div className="mb-4 h-auto" >
+                        <WorkContainer
+                          image={project.image}
+                          title={project.title}
+                          status={project.status}
+                          capstone={project.capstone}
+                          description={project.description}
+                          website={project.website}
+                          github={project.github}
+                          development={project.development}
+                        />
+                      </div>
+                    ))
+                  ) : (
+                    <div>No data available</div>
+                  )}
+                </div>
+              )}
             </div>
           </div>
           {/*Certificate */}
-
           <div>
             <HeaderText>Certificate</HeaderText>
           </div>
