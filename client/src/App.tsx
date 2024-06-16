@@ -7,8 +7,8 @@ import { FacebookIcon, GithubIcon, LinkedInIcon, ProfileImage } from './asset/me
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import { HeaderText } from "./layout/Font";
 import { Helmet } from "react-helmet-async";
-import { Html, Css, Js, Ts, Php, Sql, TailWind, Bootstrap, Antd, ReactJs, ExpressJs, MongoDb, Npm, Postman, Git, Figma, Vercel, ReactQuery, Flutter, Flask, Python } from './asset/DevIcon';
-import { Capstone, StudentHub, Rick, Kali, Book, Quiz, Expenses, Meal, Company, Rodman, Bolt } from "./asset/Work";
+import { Html, Css, Js, Ts, Php, Sql, TailWind, Bootstrap, Antd, ReactJs, ExpressJs, MongoDb, Npm, Postman, Git, Figma, Vercel, ReactQuery, Flutter, Flask, Python, Svelte } from './asset/DevIcon';
+import { Capstone, StudentHub, Invoice, Kali, Book, Quiz, Expenses, Meal, Company, Rodman, Bolt } from "./asset/Work";
 import { WorkContainer } from "./work/WorkContainer";
 import { useEffect, useState } from "react";
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
@@ -112,16 +112,16 @@ export default function App() {
     },
     {
 
-      image: <Rick />,
-      title: 'Rick and Morty API',
+      image: <Invoice />,
+      title: 'Invoice App',
       status: 'Public',
       capstone: 'Personal Project',
       description:
         <>
-          A personal project. The tech stack I used included <strong>React.js</strong> and <strong>Rick and Morty API</strong>.
+          A Front-end Mentor Challenge. The tech stack I used included <strong>Svelte</strong> and <strong>Tailwind</strong>.
         </>,
-      website: "https://apirickandmorty-blue.vercel.app/",
-      github: "https://github.com/yoshieexD/apirickandmorty",
+      website: "https://svelte-invoice.vercel.app/invoice",
+      github: "https://github.com/yoshieexD/svelte-invoice",
       development: "Front End",
       web: 'web'
     },
@@ -244,6 +244,7 @@ export default function App() {
             <IconButton tooltip="Antd"><  Antd /></IconButton>
             <IconButton tooltip="React Js">< ReactJs /></IconButton>
             <IconButton tooltip="React Query">< ReactQuery /></IconButton>
+            <IconButton tooltip="Svelte"><  Svelte /></IconButton>
             <IconButton tooltip="Express Js">< ExpressJs /></IconButton>
             <IconButton tooltip="My Sql"> < Sql /> </IconButton>
             <IconButton tooltip="MongoDB"><  MongoDb /></IconButton>

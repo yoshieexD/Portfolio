@@ -9,6 +9,7 @@ import meal from './img/meal.png';
 import companys from './img/company.png';
 import rodman from './img/rodman.png';
 import bolt from './img/usianbolt.png';
+import invoice from './img/svelte.png';
 export const Capstone = () => {
     return (
         <img src={capstone} alt='capstone' className='w-full h-full rounded-t-lg' />
@@ -24,6 +25,12 @@ export const StudentHub = () => {
 export const Rick = () => {
     return (
         <img src={rick} alt='rick' className='w-full h-full rounded-t-lg' />
+    )
+}
+
+export const Invoice = () => {
+    return (
+        <img src={invoice} alt="invoice" className='w-full h-full rounded-t-lg' />
     )
 }
 
